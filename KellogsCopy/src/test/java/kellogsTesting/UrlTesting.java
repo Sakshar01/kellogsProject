@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -189,6 +190,16 @@ public class UrlTesting extends Utilities {
 //				}
 				
 //
+				/// Browser Resize to Mobile screenshot
+				System.out.println(driverObject.manage().window().getSize());
+				 Dimension d = new Dimension(375,812);
+				 driverObject.manage().window().setSize(d);
+				 System.out.println(driverObject.manage().window().getSize());
+				///
+				
+				
+				
+				
 				final Screenshot screenshot = new AShot().shootingStrategy(new ViewportPastingStrategy(1000))
 						.takeScreenshot(driverObject);
 				final BufferedImage image = screenshot.getImage();
