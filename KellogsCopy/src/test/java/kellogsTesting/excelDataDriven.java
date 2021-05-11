@@ -27,6 +27,7 @@ public class excelDataDriven {
 	 * pass file object as the argument
 	 */
 	public ArrayList<String> getData(String testCaseName) throws IOException {
+		System.out.println("Inaisew");
 		ArrayList<String> array = new ArrayList<String>();
 		FileInputStream excelFileObject = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/LocalesList_URLs.xlsx");
 		XSSFWorkbook workBookObject = new XSSFWorkbook(excelFileObject);
@@ -54,6 +55,7 @@ public class excelDataDriven {
 				while (row.hasNext() && flagFound ==0) {
 					flagFound =0;
 					if (r.getCell(column).getStringCellValue().equalsIgnoreCase(testCaseName)) {
+						System.out.println("TestCase name" +testCaseName);
 						flagFound = 1;
 						Iterator<Cell> cellIndex = r.cellIterator();
 						while (cellIndex.hasNext()) {

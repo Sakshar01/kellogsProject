@@ -18,9 +18,9 @@ public class HomePageObjects {
 	WebElement facebookSharingBtn;
 	@FindBy(id = "shareTwitter")
 	WebElement twitterSharingBtn;
-	@FindBy(id="username_or_email")
+	@FindBy(xpath="//input[@name='session[username_or_email]']")
 	WebElement twitterUserNameField;
-	@FindBy(id="password")
+	@FindBy(xpath="//input[@name='session[password]']")
 	WebElement twitterPasswordField;
 	@FindBy(id="")
 	WebElement facebookUserNameField;
@@ -28,7 +28,7 @@ public class HomePageObjects {
 	WebElement facebookPasswordField;
 	@FindBy(xpath = "//input[@name='login']")
 	WebElement facebookLoginBtn;
-	@FindBy(xpath = "//input[@value='Log in and Tweet']")
+	@FindBy(xpath = "//span[text()='Log in']")
 	WebElement twitterLoginBtn;
 	
 

@@ -29,7 +29,7 @@ public class Utilities {
 				System.getProperty("user.dir") + "/src/main/java/resources/DataDriven.properties");
 		propertiesObject.load(fileObj);
 		if (propertiesObject.getProperty("browser").equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", Constants.getChromePath());
+			System.setProperty("webdriver.chrome.driver", propertiesObject.getProperty("ChromeExeFilePath"));
 			driverObject = new ChromeDriver();
 		} else if (propertiesObject.getProperty("browser").equalsIgnoreCase("firefox")) {
 //			System.setProperty("webdriver.firefox.marionette",Constants.getFirefoxPath());
